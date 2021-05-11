@@ -6,13 +6,17 @@ import Todo from "./components/Todo";
 
 function App(props) {
 
+  function addTask(name) {
+    alert(name);
+  }
+
  const taskList = props.tasks.map(task => (
   <Todo id={task.id} name={task.name} completed={task.completed} key={task.id} />));
 
   return (
     <div className="todoapp stack-large">
       <h1>Faidons ToDo list</h1>
-        <Form />
+      <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         <FilterButton />
         <FilterButton />
